@@ -1,0 +1,78 @@
+@use '../../../../scss/variables' as v;
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: v.$background;
+  padding: v.$spacing-md;
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: v.$shadow-medium;
+
+    mat-card-header {
+      justify-content: center;
+      margin-bottom: v.$spacing-md;
+
+      mat-card-title {
+        color: v.$text-primary;
+        font-size: v.$font-size-xl;
+      }
+    }
+
+    mat-card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: v.$spacing-md;
+
+        mat-form-field {
+          width: 100%;
+        }
+
+        .error-message {
+          color: v.$error;
+          font-size: v.$font-size-sm;
+          margin-top: -v.$spacing-xs;
+        }
+
+        .form-actions {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: v.$spacing-md;
+          margin-top: v.$spacing-md;
+
+          button[mat-raised-button] {
+            width: 100%;
+            height: 42px;
+            transition: v.$transition-normal;
+
+            mat-spinner {
+              display: inline-block;
+              margin-right: v.$spacing-sm;
+            }
+
+            &:disabled {
+              background-color: v.$text-disabled;
+            }
+          }
+
+          .forgot-password {
+            color: v.$text-secondary;
+            text-decoration: none;
+            font-size: v.$font-size-sm;
+            transition: v.$transition-fast;
+
+            &:hover {
+              color: v.$primary;
+            }
+          }
+        }
+      }
+    }
+  }
+} 

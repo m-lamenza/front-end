@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use './scss/variables' as v;
+@use '@angular/material' as mat;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: v.$font-family;
+  font-size: v.$font-size-md;
+  color: v.$text-primary;
+  background-color: v.$background;
+}
+
+// Estilos globales para Material
+.mat-mdc-card {
+  border-radius: v.$border-radius-md !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-raised-button {
+  &.mat-primary {
+    background-color: v.$primary !important;
+  }
+}
+
+// Utilidades de espaciado
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: v.$spacing-sm !important; }
+.mt-2 { margin-top: v.$spacing-md !important; }
+.mt-3 { margin-top: v.$spacing-lg !important; }
+.mb-1 { margin-bottom: v.$spacing-sm !important; }
+.mb-2 { margin-bottom: v.$spacing-md !important; }
+.mb-3 { margin-bottom: v.$spacing-lg !important; }
+
+// Utilidades de texto
+.text-center { text-align: center !important; }
+.text-primary { color: v.$primary !important; }
+.text-error { color: v.$error !important; }
+.text-success { color: v.$success !important; }
