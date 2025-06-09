@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IAuthContract } from '../../domain/contracts/auth.contract';
+import { IAuthContract } from '../../domain/dao/auth.contract';
 import { AuthResponse, AuthCredentials, PasswordResetResponse } from '../../domain/models/auth.model';
 import { environment } from '../../../../environments/environment';
 

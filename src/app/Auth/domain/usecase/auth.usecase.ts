@@ -1,8 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
-import { IAuthContract } from '../contracts/auth.contract';
+import { IAuthContract } from '../dao/auth.contract';
 import { AuthResponse, PasswordResetResponse } from '../models/auth.model';
-import { AUTH_CONTRACT } from '../contracts/auth.token';
+import { AUTH_CONTRACT } from '../dao/auth.token';
 
 @Injectable()
 export class AuthUseCase {
