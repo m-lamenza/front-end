@@ -117,7 +117,6 @@ export class AuthService {
         
         // Verificar si ya tenemos un código de autorización
         const urlParams = new URLSearchParams(window.location.search);
-        console.log('AuthService: Parámetros de URL:', Object.fromEntries(urlParams.entries()));
         
         const code = urlParams.get('code');
         console.log('AuthService: Código encontrado:', code);
@@ -142,8 +141,7 @@ export class AuthService {
 
         // Construir la URL completa del SSO
         const ssoLoginUrl = `${this.oauthConfig.authUrl}?${params.toString()}`;
-        console.log('AuthService: URL de redirección al SSO:', ssoLoginUrl);
-        console.log('AuthService: Parámetros de redirección:', Object.fromEntries(params.entries()));
+
         
         // Redirigir al SSO
         window.location.href = ssoLoginUrl;
