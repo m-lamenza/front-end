@@ -24,13 +24,18 @@ $text-primary: rgba(0, 0, 0, 0.87);
 $text-secondary: rgba(0, 0, 0, 0.54);
 $text-disabled: rgba(0, 0, 0, 0.38);
 $text-hint: rgba(0, 0, 0, 0.38);
+$text-grey: rgba(228, 228, 228, 1);
 
 // Colores de borde
 $border-color: rgba(0, 0, 0, 0.12);
 $divider-color: rgba(0, 0, 0, 0.12);
+$border-button: rgba(119, 126, 144, 1);
 
 // Color por defecto para iconos
 $icon-default-color: #777E90;
+
+// Color por defecto para botones
+$button-default-color: #777E90;
 
 // Sombras
 $shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -48,6 +53,7 @@ $spacing-xl: 2rem;       // 32px
 $border-radius-sm: 4px;
 $border-radius-md: 8px;
 $border-radius-lg: 16px;
+$border-radius-xl: 25px;
 
 // Breakpoints
 $breakpoint-xs: 0;
@@ -68,3 +74,8 @@ $font-size-xl: 1.5rem;    // 24px
 $transition-fast: 200ms ease-in-out;
 $transition-normal: 300ms ease-in-out;
 $transition-slow: 500ms ease-in-out; 
+
+:root {
+    --icon-color: #{$icon-default-color};
+    --button-color: #{$button-default-color};
+}

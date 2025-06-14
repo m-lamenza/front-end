@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { AppSfeIconsComponent } from '../../libs/components/app-sfe-icons/app-sfe-icons.component';
 import { AuthService } from '../Auth/infrastructure/services/auth.service';
+import { AppSfeButtonComponent } from 'src/libs/components/app-sfe-button/app-sfe-button.component';
 
 @Component({
     selector: 'app-principal',
@@ -14,7 +15,8 @@ import { AuthService } from '../Auth/infrastructure/services/auth.service';
         MatButtonModule, 
         MatToolbarModule, 
         MatIconModule, 
-        AppSfeIconsComponent
+        AppSfeIconsComponent,
+        AppSfeButtonComponent
     ],
     template: `
         <mat-toolbar color="primary">
@@ -30,6 +32,9 @@ import { AuthService } from '../Auth/infrastructure/services/auth.service';
         <div class="content">
             <h1>Bienvenido a la página principal</h1>
             <p>Esta es la página protegida que solo se puede ver después de iniciar sesión.</p>
+            <app-sfe-button>Continuar</app-sfe-button> <br><br>
+            <app-sfe-button size="sm">Continuar</app-sfe-button> <br><br>
+            <app-sfe-button size="sm" [disabled]="true">Continuar</app-sfe-button>
         </div>
     `,
     styles: [`

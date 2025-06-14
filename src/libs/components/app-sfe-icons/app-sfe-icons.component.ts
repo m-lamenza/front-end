@@ -16,7 +16,7 @@ import { HttpClient } from '@angular/common/http';
                   'height.px': scale, 
                   'transform': 'rotate(' + rotate + 'deg)',
                   'overflow': 'initial',
-                  'color': color || '#777E90'
+                  'color': color
                 }"
                 [class.scale-icon]="scale!==0" 
                 [class.spinner]="spinner" 
@@ -32,7 +32,7 @@ export class AppSfeIconsComponent implements OnInit {
   @Input("spinner") spinner: boolean = false;
   @Input("rotate") rotate: number = 0;
   @Input("class") class: string = "";
-  @Input("color") color: string = "#777E90"; // Color por defecto
+  @Input("color") color: string = ""; // Color por defecto
 
 
   constructor(
@@ -42,7 +42,17 @@ export class AppSfeIconsComponent implements OnInit {
 
   ngOnInit() {
     console.log('Registrando icono:', this.icon);
+    this.setDefaultColor();
     // Registrar el icono svg cuando el componente se inicializa
     this.matIconRegistry.addSvgIcon('ic-user', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/user.svg'));
+  }
+
+  setDefaultColor(){
+    const color_ = this.color || "";
+    if(!color_.trim()){
+      const rootStyles = getComputedStyle(document.documentElement);
+      const colorDefault = rootStyles.getPropertyValue('--icon-color').trim();
+      this.color = colorDefault;
+    }
   }
 } 

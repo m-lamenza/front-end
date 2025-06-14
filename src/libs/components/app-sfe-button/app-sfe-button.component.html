@@ -1,0 +1,12 @@
+<button class="btn-sfe-base"
+        [disabled]="disabled"
+        [ngStyle]="{
+            'background-color': color
+        }"
+        [ngClass]="{
+            'btn-large': size == 'lg',
+            'btn-sm': size == 'sm'
+        }"
+        (click)="click()">
+        <span><ng-content></ng-content></span>
+</button>
