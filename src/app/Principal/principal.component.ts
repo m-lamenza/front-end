@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppSfeIconsComponent } from '../../libs/components/app-sfe-icons/app-sfe-icons.component';
 import { AuthService } from '../Auth/infrastructure/services/auth.service';
 import { AppSfeButtonComponent } from 'src/libs/components/app-sfe-button/app-sfe-button.component';
+import { SfeInputComponent } from 'src/libs/components/sfe-input/sfe-input.component';
 
 @Component({
     selector: 'app-principal',
@@ -16,7 +17,8 @@ import { AppSfeButtonComponent } from 'src/libs/components/app-sfe-button/app-sf
         MatToolbarModule, 
         MatIconModule, 
         AppSfeIconsComponent,
-        AppSfeButtonComponent
+        AppSfeButtonComponent,
+        SfeInputComponent
     ],
     template: `
         <mat-toolbar color="primary">
@@ -34,7 +36,21 @@ import { AppSfeButtonComponent } from 'src/libs/components/app-sfe-button/app-sf
             <p>Esta es la página protegida que solo se puede ver después de iniciar sesión.</p>
             <app-sfe-button>Continuar</app-sfe-button> <br><br>
             <app-sfe-button size="sm">Continuar</app-sfe-button> <br><br>
-            <app-sfe-button size="sm" [disabled]="true">Continuar</app-sfe-button>
+            <app-sfe-button size="sm" [disabled]="true">Continuar</app-sfe-button> <br><br>
+            <p>input desabilitado</p><br>
+            <app-sfe-input width="559" [disabled]="true" placeholder="Buscar (Nombre o DNI)" /> <br><br>
+            <p>input normal</p><br>
+            <app-sfe-input width="559" placeholder="Ingrese datos" 
+              (onInput)="onInput($event)"/>
+            <p>resultado: {{valInput}}</p><br>
+            <p>input busqueda</p><br>
+            <app-sfe-input icon="ic-search" [search]="true" width="559" placeholder="Buscar (Nombre o DNI)" 
+              (onInput)="onSearch($event)"/>
+            <p>resultado: {{valSearch}}</p><br>
+             <p>input busqueda enter</p><br>
+            <app-sfe-input icon="ic-search" [enterSearch]="true" width="559" placeholder="Buscar (Nombre o DNI)" 
+              (onInput)="onSearchEnter($event)"/>
+            <p>resultado: {{valSearchEnter}}</p><br>
         </div>
     `,
     styles: [`
@@ -47,12 +63,30 @@ import { AppSfeButtonComponent } from 'src/libs/components/app-sfe-button/app-sf
         .user-icon {
             margin-right: 8px;
         }
+        p {
+           margin: 0;
+        }    
     `]
 })
 export class PrincipalComponent {
+    valSearch = '';
+    valInput = '';
+    valSearchEnter = '';
     constructor(private authService: AuthService) {}
 
     logout() {
         this.authService.logout().subscribe();
+    }
+
+    onSearch(ev: any){
+      this.valSearch = ev;
+    }
+
+    onInput(ev: any){
+        this.valInput = ev;
+    }
+
+    onSearchEnter(ev: any){
+        this.valSearchEnter = ev;
     }
 } 

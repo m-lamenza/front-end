@@ -45,6 +45,8 @@ export class AppSfeIconsComponent implements OnInit {
     this.setDefaultColor();
     // Registrar el icono svg cuando el componente se inicializa
     this.matIconRegistry.addSvgIcon('ic-user', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/user.svg'));
+    this.matIconRegistry.addSvgIcon('ic-search', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/search.svg'));
+    this.matIconRegistry.addSvgIcon('ic-close', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/close.svg'));
   }
 
   setDefaultColor(){

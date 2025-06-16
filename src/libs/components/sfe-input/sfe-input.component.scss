@@ -1,0 +1,37 @@
+@use  '../../../scss/variables' as *;
+
+.container-sfe-inpt {
+    width: 100%;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid $text-grey;
+    border-radius: 10px;
+    background-color: $surface;
+    box-sizing: border-box;
+
+    input {
+        width: 100%;
+        color: $inpt-default-color;
+        font-size: 14px;
+        border: none;
+        background-color: $surface;
+        &:focus {
+            outline: none;
+        }
+        &:disabled {
+            @extend .disabled-sfe-inpt;
+        }
+    }
+}
+
+.disabled-sfe-inpt {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ic-close-inpt {
+    cursor: pointer;
+}

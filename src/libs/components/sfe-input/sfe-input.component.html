@@ -1,0 +1,19 @@
+<div class="container-sfe-inpt" [style.maxWidth.px]="width" [ngClass]="{'disabled-sfe-inpt': disabled}">
+    <app-sfe-icons *ngIf="icon"
+            [icon]="icon" 
+            [scale]="24">
+           </app-sfe-icons>
+    <input type="text" [placeholder]="placeholder" [disabled]="disabled"
+           [formControl]="inptControl"
+           (input)="handleInput($event)"
+           (keydown.enter)="onSearchEnter()"
+           (blur)="handleBlur()"
+           (focus)="handleFocus()"
+           (change)="handleChange()">
+    <app-sfe-icons *ngIf="inptControl.value"
+           icon="ic-close" 
+           [scale]="10"
+           class="ic-close-inpt"
+           (click)="reset()">
+          </app-sfe-icons>
+</div>
