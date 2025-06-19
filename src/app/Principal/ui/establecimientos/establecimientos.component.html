@@ -1,0 +1,20 @@
+<div class="establecimientos-container">
+
+    <div class="establecimientos-header">
+      <h2>Verificación de establecimientos</h2>
+      <p class="subtitle">Seleccione el establecimiento</p>
+    </div>
+    <div class="establecimientos-list">
+      <div
+        class="establecimiento-card"
+        *ngFor="let est of establecimientos"
+        (click)="verEstablecimiento(est.id)"
+      >
+        <div class="card-info">
+          <div class="card-title">{{ est.nombre }}</div>
+          <div class="card-subtitle">{{ est.subtitulo }}</div>
+        </div>
+        <app-sfe-icons icon="ic-arrow" [scale]="20" class="card-arrow"></app-sfe-icons>
+      </div>
+    </div>
+  </div>

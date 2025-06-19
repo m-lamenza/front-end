@@ -27,7 +27,6 @@ export class AuthService {
 
     constructor() {
         console.log('AuthService: Constructor inicializado');
-        // Verificar si hay código en la URL al iniciar
         this.checkForAuthCode();
     }
 
@@ -185,5 +184,12 @@ export class AuthService {
             console.error('AuthService: Error durante el logout:', error);
             throw error;
         }
+    }
+
+    // Método para obtener y mostrar el token
+    getSSOToken(): string | null {
+        const token = localStorage.getItem('token');
+        console.log('Token SSO:', token);
+        return token;
     }
 } 

@@ -47,6 +47,7 @@ export class AppSfeIconsComponent implements OnInit {
     this.matIconRegistry.addSvgIcon('ic-user', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/user.svg'));
     this.matIconRegistry.addSvgIcon('ic-search', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/search.svg'));
     this.matIconRegistry.addSvgIcon('ic-close', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/close.svg'));
+    this.matIconRegistry.addSvgIcon('ic-arrow', this.sanitizer.bypassSecurityTrustResourceUrl('assets/icons/arrow.svg'));
   }
 
   setDefaultColor(){
