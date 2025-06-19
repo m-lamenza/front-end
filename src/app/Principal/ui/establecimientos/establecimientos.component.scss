@@ -1,3 +1,5 @@
+@use '../../../scss/variables' as v;
+
 .establecimientos-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,18 +13,18 @@
   h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #222;
+    color: v.$text-dark;
     margin: 0 0 0.25rem 0;
   }
   .subtitle {
-    color: #888;
+    color: v.$text-grey-light;
     font-size: 1rem;
     margin: 0;
   }
   
   .establecimientos-actions {
     .btn-primary {
-      background: #007bff;
+      background: v.$blue-primary;
       color: white;
       border: none;
       padding: 0.75rem 1.5rem;
@@ -35,7 +37,7 @@
       transition: background 0.2s;
       
       &:hover {
-        background: #0056b3;
+        background: v.$blue-primary-dark;
       }
       
       .icon-plus::before {
@@ -56,8 +58,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
-  border: 1px solid #ececec;
+  background: v.$surface;
+  border: 1px solid v.$border-light;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   cursor: pointer;
@@ -66,7 +68,7 @@
   
   &:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border-color: #d0d0d0;
+    border-color: v.$border-medium;
   }
   
   .card-info {
@@ -77,12 +79,12 @@
   
   .card-title {
     font-weight: 700;
-    color: #222;
+    color: v.$text-dark;
     font-size: 1.1rem;
   }
   
   .card-subtitle {
-    color: #888;
+    color: v.$text-grey-light;
     font-size: 1rem;
   }
   
@@ -104,7 +106,7 @@
         height: 60px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid #f0f0f0;
+        border: 3px solid v.$border-very-light;
       }
     }
     
@@ -115,13 +117,13 @@
       font-weight: 500;
       
       &.activo {
-        background: #d4edda;
-        color: #155724;
+        background: v.$success-bg;
+        color: v.$success-dark;
       }
       
       &.inactivo {
-        background: #f8d7da;
-        color: #721c24;
+        background: v.$error-bg;
+        color: v.$error-dark;
       }
     }
   }
@@ -131,14 +133,14 @@
     
     .card-type {
       font-size: 0.9rem;
-      color: #007bff;
+      color: v.$blue-primary;
       font-weight: 500;
       margin: 0 0 0.5rem 0;
     }
     
     .card-address {
       font-size: 0.9rem;
-      color: #666;
+      color: v.$text-grey-medium;
       margin: 0;
     }
   }
@@ -148,7 +150,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem 1.5rem 1.5rem;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid v.$border-very-light;
     
     .card-contact {
       display: flex;
@@ -157,7 +159,7 @@
       
       .contact-item {
         font-size: 0.8rem;
-        color: #666;
+        color: v.$text-grey-medium;
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -190,11 +192,11 @@
         transition: background 0.2s;
         
         &.btn-edit {
-          background: #fff3cd;
-          color: #856404;
+          background: v.$warning-bg;
+          color: v.$warning-dark;
           
           &:hover {
-            background: #ffeaa7;
+            background: v.$warning-bg-light;
           }
           
           .icon-edit::before {
@@ -204,11 +206,11 @@
         }
         
         &.btn-delete {
-          background: #f8d7da;
-          color: #721c24;
+          background: v.$error-bg;
+          color: v.$error-dark;
           
           &:hover {
-            background: #f5c6cb;
+            background: v.$error-bg-light;
           }
           
           .icon-delete::before {

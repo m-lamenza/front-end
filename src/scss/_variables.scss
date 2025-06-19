@@ -26,10 +26,21 @@ $text-disabled: rgba(0, 0, 0, 0.38);
 $text-hint: rgba(0, 0, 0, 0.38);
 $text-grey: rgba(228, 228, 228, 1);
 
+
+$text-dark: #222;
+$text-dark-secondary: #333;
+$text-grey-medium: #666;
+$text-grey-light: #888;
+
 // Colores de borde
 $border-color: rgba(0, 0, 0, 0.12);
 $divider-color: rgba(0, 0, 0, 0.12);
 $border-button: rgba(119, 126, 144, 1);
+
+// Colores de borde específicos encontrados en componentes
+$border-light: #ececec;
+$border-medium: #d0d0d0;
+$border-very-light: #f0f0f0;
 
 // Color por defecto para iconos
 $icon-default-color: #777E90;
@@ -38,6 +49,20 @@ $icon-default-color: #777E90;
 $button-default-color: #777E90;
 
 $inpt-default-color: #959595;
+
+// Colores de estado específicos encontrados en componentes
+$blue-primary: #007bff;
+$blue-primary-dark: #0056b3;
+$success-dark: #155724;
+$error-dark: #721c24;
+$warning-dark: #856404;
+
+// Colores de fondo para estados específicos
+$success-bg: #d4edda;
+$error-bg: #f8d7da;
+$warning-bg: #fff3cd;
+$warning-bg-light: #ffeaa7;
+$error-bg-light: #f5c6cb;
 
 // Sombras
 $shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);

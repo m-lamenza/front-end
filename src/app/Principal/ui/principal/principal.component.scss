@@ -1,3 +1,5 @@
+@use '../../../scss/variables' as v;
+
 .principal-layout {
   display: flex;
   height: 100vh;
@@ -12,7 +14,7 @@
 
 .principal-content {
   flex: 1;
-  background: #fff;
+  background: v.$surface;
   padding: 2rem;
   overflow-y: auto;
 }
